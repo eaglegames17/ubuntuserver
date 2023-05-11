@@ -20,7 +20,7 @@ collection2 = client.get_database("outlookmail").get_collection("mailwithdata")
 remove_digits = str.maketrans('', '', digits)
 
 options = webdriver.ChromeOptions() 
-# options.headless = True
+options.headless = True
 options.add_argument('--disable-popup-blocking')
 bot = uc.Chrome(options=options)
 # bot.get('https://login.live.com/login.srf')
