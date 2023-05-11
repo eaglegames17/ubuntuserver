@@ -70,11 +70,11 @@ try:
 
     bot.get('https://login.live.com/login.srf')
 
-    bot.save_screenshot('1.png')
+    # bot.save_screenshot('1.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[name="loginfmt"]'))).send_keys('lilian.grante@outlook.com')
 
-    bot.save_screenshot('2.png')
+    # bot.save_screenshot('2.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="submit"]'))).click()
 
@@ -82,15 +82,15 @@ try:
 
     time.sleep(2)
 
-    bot.save_screenshot('3.png')
+    # bot.save_screenshot('3.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[name="passwd"]'))).send_keys('Jatin@123')
 
-    bot.save_screenshot('4.png')
+    # bot.save_screenshot('4.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="submit"]'))).click()
 
-    bot.save_screenshot('5.png')
+    # bot.save_screenshot('5.png')
 
     try:
         WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
@@ -101,7 +101,7 @@ try:
 
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="button"]'))).click()
 
-        bot.save_screenshot('6.png')
+        # bot.save_screenshot('6.png')
     except:
         pass
 
@@ -122,7 +122,7 @@ try:
     
     # time.sleep(5)
 
-    bot.save_screenshot('66.png')
+    # bot.save_screenshot('66.png')
 
     bot.get('https://outlook.live.com/mail/0/')
 
@@ -139,7 +139,7 @@ try:
         time.sleep(2)
         pass
 
-    bot.save_screenshot('7.png')
+    # bot.save_screenshot('7.png')
 
     print("Outlook Done!!!!!!!!!!!!!")
 
@@ -155,7 +155,7 @@ try:
 
     time.sleep(5)
 
-    bot.save_screenshot('8.png')
+    # bot.save_screenshot('8.png')
 
 
     try:
@@ -163,7 +163,7 @@ try:
 
         bot.find_element(By.CSS_SELECTOR, 'button._42ft._4jy0._al65._4jy3._4jy1.selected._51sy').click()
 
-        bot.save_screenshot('9.png')
+        # bot.save_screenshot('9.png')
     except:
         pass
     # WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button._42ft._4jy0._al65._4jy3._4jy1.selected._51sy'))).click()
@@ -171,7 +171,7 @@ try:
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a._42ft._4jy0._6lti._4jy6._4jy2.selected._51sy'))).click()
 
-    bot.save_screenshot('10.png')
+    # bot.save_screenshot('10.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[name="reg_email__"]'))).send_keys('lilian.grante@outlook.com')
 
@@ -199,11 +199,11 @@ try:
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[value="2"]'))).click()
 
-    bot.save_screenshot('11.png')
+    # bot.save_screenshot('11.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[name="websubmit"]'))).click()
 
-    bot.save_screenshot('12.png')
+    # bot.save_screenshot('12.png')
 
 
     time.sleep(15)
@@ -219,7 +219,7 @@ try:
 
         # time.sleep(10)
 
-        # bot.save_screenshot('13.png')
+        bot.save_screenshot('13.png')
 
         bot.quit()
 
@@ -242,11 +242,11 @@ try:
     # time.sleep(10)
 
     
-    bot.save_screenshot('133.png')
+    # bot.save_screenshot('133.png')
 
     elee = WebDriverWait(bot,100).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'is your Facebook confirmation code')]")))
 
-    bot.save_screenshot('14.png')
+    # bot.save_screenshot('14.png')
 
     ttext = elee.text
 
@@ -265,18 +265,18 @@ try:
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="code_in_cliff"]'))).send_keys(facebookcode)
 
-    bot.save_screenshot('15.png')
+    # bot.save_screenshot('15.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[name="confirm"]'))).click()
             
     time.sleep(20)
 
-    bot.save_screenshot('16.png')
+    # bot.save_screenshot('16.png')
 
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Allow all cookies')]"))).click()
 
-        bot.save_screenshot('17.png')
+        # bot.save_screenshot('17.png')
     except:
         pass
         
@@ -294,7 +294,7 @@ try:
     collection2.insert_one(data)
     
 
-    bot.save_screenshot('18.png')
+    # bot.save_screenshot('18.png')
 
     
 
