@@ -138,7 +138,8 @@ try:
         bot.get('https://outlook.live.com/mail/0/')
         time.sleep(2)
         pass
-
+    
+    time.sleep(10)
     bot.save_screenshot('7.png')
 
     print("Outlook Done!!!!!!!!!!!!!")
