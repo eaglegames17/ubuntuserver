@@ -223,7 +223,8 @@ try:
 
         bot.quit()
 
-        sys.exit("Account Not Created 180 days Text Came")
+        exit()
+        # sys.exit("Account Not Created 180 days Text Came")
 
          
 
@@ -243,6 +244,7 @@ try:
 
     
     bot.save_screenshot('133.png')
+
 
     elee = WebDriverWait(bot,100).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'is your Facebook confirmation code')]")))
 
