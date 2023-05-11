@@ -222,7 +222,7 @@ try:
 
         bot.save_screenshot('13.png')
 
-        bot.quit()
+        # bot.quit()
 
         exit()
         # sys.exit("Account Not Created 180 days Text Came")
