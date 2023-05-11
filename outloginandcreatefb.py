@@ -106,7 +106,7 @@ try:
         pass
 
     try:
-        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
+        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
     except:
         pass
 
@@ -126,16 +126,29 @@ try:
 
     bot.get('https://outlook.live.com/mail/0/')
 
+    print('1')
+
     try:
         WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Skip for now')]"))).click()
+        print('2')
     except:
         pass
 
 
     try:
-        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
+        WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
+        print('3')
     except:
         bot.get('https://outlook.live.com/mail/0/')
+        time.sleep(2)
+        pass
+    try:
+        WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
+        print('33')
+    except:
+        data = {'email': email}
+        collection.insert_one(data)
+        sys.exit('Outlook Not Opened')
         time.sleep(2)
         pass
     
@@ -202,15 +215,20 @@ try:
 
     bot.save_screenshot('11.png')
 
+    print('4')
+
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[name="websubmit"]'))).click()
 
     bot.save_screenshot('12.png')
+    print('5')
 
 
     time.sleep(15)
 
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(),'Complete these steps in the next 180 days to make sure that you can use this account.')]")))
+
+        print('6')
 
         print('180 days Text Came. Account not created')
 
@@ -224,7 +242,7 @@ try:
 
         # bot.quit()
 
-        exit()
+        sys.exit('180 days Text Came. Account not created')
         # sys.exit("Account Not Created 180 days Text Came")
 
          
@@ -246,8 +264,12 @@ try:
     
     bot.save_screenshot('133.png')
 
+    print('7')
+
 
     elee = WebDriverWait(bot,100).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'is your Facebook confirmation code')]")))
+
+    print('8')
 
     bot.save_screenshot('14.png')
 
@@ -268,16 +290,20 @@ try:
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="code_in_cliff"]'))).send_keys(facebookcode)
 
+    print('9')
+
     bot.save_screenshot('15.png')
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[name="confirm"]'))).click()
             
     time.sleep(20)
+    print('10')
 
     bot.save_screenshot('16.png')
 
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Allow all cookies')]"))).click()
+        print('11')
 
         bot.save_screenshot('17.png')
     except:
@@ -288,7 +314,10 @@ try:
 
     print("Done Facebook!!!!!!.... Account Created")
 
+
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Group conversations')]"))).click()
+
+    print('12')
 
     print('Confirmed FB Account Created')
 
@@ -299,7 +328,9 @@ try:
 
     bot.save_screenshot('18.png')
 
-    
+    print('13')
+
+    sys.exit('Doneuuuuuuuuuuuuuuuuuuuuu')
 
 
         
