@@ -148,6 +148,7 @@ try:
     except:
         data = {'email': email}
         collection.insert_one(data)
+        bot.save_screenshot('777.png')
         sys.exit('Outlook Not Opened')
         time.sleep(2)
         pass
@@ -243,6 +244,7 @@ try:
         # bot.quit()
 
         sys.exit('180 days Text Came. Account not created')
+        print('666')
         # sys.exit("Account Not Created 180 days Text Came")
 
          
