@@ -20,7 +20,7 @@ collection2 = client.get_database("outlookmail").get_collection("mailwithdata")
 remove_digits = str.maketrans('', '', digits)
 
 options = webdriver.ChromeOptions() 
-options.headless = True
+# options.headless = True
 options.add_argument('--disable-popup-blocking')
 bot = uc.Chrome(options=options)
 # bot.get('https://login.live.com/login.srf')
@@ -134,24 +134,30 @@ try:
     except:
         pass
 
-
     try:
-        WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
-        print('3')
+        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Skip for now')]"))).click()
+        print('22')
     except:
-        bot.get('https://outlook.live.com/mail/0/')
-        time.sleep(2)
         pass
-    try:
-        WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
-        print('33')
-    except:
-        data = {'email': email}
-        collection.insert_one(data)
-        bot.save_screenshot('777.png')
-        sys.exit('Outlook Not Opened')
-        time.sleep(2)
-        pass
+    time.sleep(5)
+    bot.get('https://outlook.live.com/mail/0/')
+    # try:
+    #     WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
+    #     print('3')
+    # except:
+    #     bot.get('https://outlook.live.com/mail/0/')
+    #     time.sleep(2)
+    #     pass
+    # try:
+    #     WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
+    #     print('33')
+    # except:
+    #     data = {'email': email}
+    #     collection.insert_one(data)
+    #     bot.save_screenshot('777.png')
+    #     sys.exit('Outlook Not Opened')
+    #     time.sleep(2)
+    #     pass
     
     time.sleep(10)
     bot.save_screenshot('7.png')
@@ -298,7 +304,7 @@ try:
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[name="confirm"]'))).click()
             
-    time.sleep(20)
+    time.sleep(10)
     print('10')
 
     bot.save_screenshot('16.png')
@@ -315,6 +321,8 @@ try:
     bot.get('https://www.facebook.com/')
 
     print("Done Facebook!!!!!!.... Account Created")
+
+    sys.exit('Doneuuuuuuuuuuuuuuuuuuuuuu1111111111')
 
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Group conversations')]"))).click()
