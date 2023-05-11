@@ -241,7 +241,7 @@ try:
 
     bot.get('https://outlook.live.com/mail/0/')
 
-    # time.sleep(10)
+    time.sleep(10)
 
     
     bot.save_screenshot('133.png')
