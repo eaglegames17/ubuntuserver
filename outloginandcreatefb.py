@@ -112,6 +112,8 @@ try:
 
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
+
+        time.sleep(8)
     except:
         pass
 
@@ -146,23 +148,23 @@ try:
         pass
     time.sleep(5)
     bot.get('https://outlook.live.com/mail/0/')
-    # try:
-    #     WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
-    #     print('3')
-    # except:
-    #     bot.get('https://outlook.live.com/mail/0/')
-    #     time.sleep(2)
-    #     pass
-    # try:
-    #     WebDriverWait(bot,25).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Junk Email')]")))
-    #     print('33')
-    # except:
-    #     data = {'email': email}
-    #     collection.insert_one(data)
-    #     bot.save_screenshot('777.png')
-    #     sys.exit('Outlook Not Opened')
-    #     time.sleep(2)
-    #     pass
+    try:
+        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Focused')]")))
+        print('3')
+    except:
+        bot.get('https://outlook.live.com/mail/0/')
+        time.sleep(2)
+        pass
+    try:
+        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Focused')]")))
+        print('33')
+    except:
+        data = {'email': email}
+        collection.insert_one(data)
+        bot.save_screenshot('777.png')
+        sys.exit('Outlook Not Opened')
+        time.sleep(2)
+        pass
     
     time.sleep(10)
     bot.save_screenshot('7.png')
