@@ -88,6 +88,11 @@ try:
 
     bot.save_screenshot('4.png')
 
+    try:
+        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//button[contains(text(),'Next')]"))).click()
+    except:
+        pass
+
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="submit"]'))).click()
 
     bot.save_screenshot('5.png')
@@ -226,12 +231,12 @@ try:
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[name="websubmit"]'))).click()
 
-    bot.save_screenshot('12.png')
+    
     print('5')
 
 
     time.sleep(15)
-
+    bot.save_screenshot('12.png')
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(),'Complete these steps in the next 180 days to make sure that you can use this account.')]")))
 
