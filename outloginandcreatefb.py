@@ -381,9 +381,11 @@ try:
     time.sleep(50000)
     bot.quit()
 except Exception as e:
-    data = {'email': email, 'fb': 'error', 'firstname': firstname, 'lastname': lastnamewithnodigits}
+    data = {'email': email}
+    collection.insert_one(data)
+    # data = {'email': email, 'fb': 'error', 'firstname': firstname, 'lastname': lastnamewithnodigits}
 
-    collection2.insert_one(data)
+    # collection2.insert_one(data)
     print(e)
     time.sleep(10000)
 
