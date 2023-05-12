@@ -126,6 +126,13 @@ try:
     except:
         pass
 
+    try:
+        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
+
+        time.sleep(4)
+    except:
+        pass
+
     # try:
     #     WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Skip for now')]"))).click()
     # except:
@@ -250,6 +257,7 @@ try:
 
     time.sleep(15)
     bot.save_screenshot('12.png')
+    isexit = 0
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(),'Complete these steps in the next 180 days to make sure that you can use this account.')]")))
 
@@ -266,8 +274,10 @@ try:
         bot.save_screenshot('13.png')
 
         # bot.quit()
+        
+        isexit = 1
 
-        sys.exit('180 days Text Came. Account not created')
+        # sys.exit('180 days Text Came. Account not created')
         print('666')
         # sys.exit("Account Not Created 180 days Text Came")
 
@@ -275,8 +285,14 @@ try:
 
 
         #if 180 days wala msg came then stop here
+    # except SystemExit:
+    #     sys.exit(1)
+    #     print("sys.exit() worked as expected")
     except:
         pass
+
+    if(isexit == 1):
+        sys.exit('180 days Text Came. Account not created')
 
     #Going Outlook For OTP Code
     bot.switch_to.window(bot.window_handles[0])
@@ -343,11 +359,11 @@ try:
     # sys.exit('Doneuuuuuuuuuuuuuuuuuuuuuu1111111111')
 
 
-    WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Group conversations')]"))).click()
+    # WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Group conversations')]"))).click()
 
-    print('12')
+    # print('12')
 
-    print('Confirmed FB Account Created')
+    # print('Confirmed FB Account Created')
 
     data = {'email': email, 'fb': 'Yes', 'firstname': firstname, 'lastname': lastnamewithnodigits}
 
