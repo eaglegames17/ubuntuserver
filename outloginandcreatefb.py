@@ -93,7 +93,10 @@ try:
     except:
         pass
 
+
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="submit"]'))).click()
+
+    time.sleep(10)
 
     bot.save_screenshot('5.png')
 
@@ -102,6 +105,9 @@ try:
     except:
         pass
 
+    time.sleep(10)
+    bot.save_screenshot('55.png')
+
     try:
 
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="button"]'))).click()
@@ -109,6 +115,9 @@ try:
         bot.save_screenshot('6.png')
     except:
         pass
+
+    time.sleep(10)
+    bot.save_screenshot('56.png')
 
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
@@ -146,8 +155,10 @@ try:
         print('22')
     except:
         pass
-    time.sleep(5)
+    time.sleep(10)
     bot.get('https://outlook.live.com/mail/0/')
+    time.sleep(10)
+    bot.save_screenshot('67.png')
     try:
         WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Focused')]")))
         print('3')
