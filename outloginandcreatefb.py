@@ -160,14 +160,14 @@ try:
     time.sleep(10)
     bot.save_screenshot('67.png')
     try:
-        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, 'button[name="Focused"]')))
+        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Meet Now')]")))
         print('3')
     except:
         bot.get('https://outlook.live.com/mail/0/')
         time.sleep(10)
         pass
     try:
-        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, 'button[name="Focused"]')))
+        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Meet Now')]")))
         print('33')
     except:
         data = {'email': email}
