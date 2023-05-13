@@ -255,7 +255,7 @@ try:
     print('5')
 
 
-    time.sleep(15)
+    time.sleep(30)
     bot.save_screenshot('12.png')
     isexit = 0
     try:
