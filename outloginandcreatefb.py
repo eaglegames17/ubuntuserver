@@ -88,15 +88,15 @@ try:
 
     bot.save_screenshot('4.png')
 
-    try:
-        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//button[contains(text(),'Next')]"))).click()
-    except:
-        pass
+    # try:
+    #     WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//button[contains(text(),'Next')]"))).click()
+    # except:
+    #     pass
 
 
     WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="submit"]'))).click()
 
-    time.sleep(10)
+    # time.sleep(10)
 
     bot.save_screenshot('5.png')
 
@@ -105,31 +105,38 @@ try:
     except:
         pass
 
-    time.sleep(10)
+    # time.sleep(10)
     bot.save_screenshot('55.png')
 
     try:
 
-        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="button"]'))).click()
+        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="submit"]'))).click()
 
         bot.save_screenshot('6.png')
     except:
         pass
 
-    time.sleep(10)
+    # time.sleep(10)
     bot.save_screenshot('56.png')
 
     try:
-        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
+        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
 
-        time.sleep(8)
+        # time.sleep(8)
     except:
         pass
 
     try:
-        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
+        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
 
-        time.sleep(4)
+        # time.sleep(4)
+    except:
+        pass
+
+    try:
+        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
+
+        # time.sleep(4)
     except:
         pass
 
@@ -152,29 +159,29 @@ try:
     print('1')
 
     try:
-        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Skip for now')]"))).click()
+        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Skip for now')]"))).click()
         print('2')
     except:
         pass
 
     try:
-        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Skip for now')]"))).click()
+        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Skip for now')]"))).click()
         print('22')
     except:
         pass
-    time.sleep(10)
+    time.sleep(5)
     bot.get('https://outlook.live.com/mail/0/')
-    time.sleep(10)
+    time.sleep(5)
     bot.save_screenshot('67.png')
     try:
-        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Meet Now')]")))
+        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Meet Now')]")))
         print('3')
     except:
         bot.get('https://outlook.live.com/mail/0/')
-        time.sleep(10)
+        # time.sleep(10)
         pass
     try:
-        WebDriverWait(bot,15).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Meet Now')]")))
+        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Meet Now')]")))
         print('33')
     except:
         data = {'email': email}
@@ -255,9 +262,11 @@ try:
     print('5')
 
 
-    time.sleep(30)
+    time.sleep(20)
     bot.save_screenshot('12.png')
     isexit = 0
+
+    
     try:
         WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(),'Complete these steps in the next 180 days to make sure that you can use this account.')]")))
 
@@ -293,6 +302,26 @@ try:
 
     if(isexit == 1):
         sys.exit('180 days Text Came. Account not created')
+
+    isotpcame = 0
+
+    try:
+        WebDriverWait(bot,10).until(EC.presence_of_element_located((By.XPATH, "//h2[contains(text(),'Enter the code from your email')]")))
+
+        print('Fb otp page came')
+
+        isotpcame = 1
+
+
+    except:
+        pass
+
+    if(isotpcame == 0):
+        data = {'email': email}
+        collection.insert_one(data)
+        sys.exit('Fb Otp Page Not came. Exiting Code')
+
+
 
     #Going Outlook For OTP Code
     bot.switch_to.window(bot.window_handles[0])
