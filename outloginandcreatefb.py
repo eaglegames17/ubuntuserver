@@ -122,21 +122,27 @@ try:
     try:
         WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
 
-        # time.sleep(8)
+        time.sleep(4)
     except:
         pass
 
     try:
         WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
 
-        # time.sleep(4)
+        time.sleep(4)
     except:
         pass
 
     try:
         WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
 
-        # time.sleep(4)
+        time.sleep(4)
+    except:
+        pass
+    try:
+        WebDriverWait(bot,5).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Continue')]"))).click()
+
+        time.sleep(4)
     except:
         pass
 
